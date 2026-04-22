@@ -1,66 +1,113 @@
-/* 기본 초기화 */
+/* 전체 배경 (완전 흰색) */
 body {
     margin: 0;
     padding: 0;
     background-color: #ffffff;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-/* 전체 규격 유지용 컨테이너 */
+/* 화면 전체를 감싸고 중앙 정렬하는 틀 */
 .wrapper {
-    width: 90%;          /* 화면 너비의 90% 사용 */
-    max-width: 1200px;   /* 최대 1200px까지만 커짐 */
-    margin: 0 auto;      /* 중앙 정렬 */
+    width: 90vw;          /* 화면 가로폭의 90% */
+    max-width: 1200px;    /* 너무 커지지는 않게 고정 */
+    margin: 0 auto;       /* 중앙 정렬 */
+    position: relative;
 }
 
-/* 상단 메뉴 바 (화면 너비에 맞춰 높이/글자 크기 자동 조절) */
+/* 상단 회색 바 (최소 높이를 줄여서 더 유연하게 줄어들도록 수정) */
 .top-bar {
     background-color: #e6e6e6;
-    height: 3vw;         /* 화면이 줄어들면 높이도 줄어듦 */
+    height: 3.5vw;        
+    min-height: 25px;     /* 최소 높이를 낮춰서 작은 화면에서도 비율 유지 */
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 1vw;
     border-bottom: 2px solid #a0a0a0;
-    margin-top: 1vw;
 }
 
-.left-menu, .right-menu {
+/* 왼쪽 버튼들 정렬 */
+.left-menu {
     display: flex;
     align-items: center;
     gap: 0.5vw;
 }
 
-/* 버튼 스타일 (vw 단위로 글자 크기 조절) */
+/* 사진 속 레트로 버튼 공통 스타일 */
 button {
-    font-size: 0.8vw;
-    padding: 0.2vw 0.6vw;
     background-color: #e6e6e6;
-    border: 1px solid #a0a0a0;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #a0a0a0;
+    border-bottom: 2px solid #a0a0a0;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: clamp(0.5rem, 0.8vw, 1rem); /* 화면에 맞춰 글자 크기 유동적 조절 */
+    padding: 0.2vw 0.8vw;
     cursor: pointer;
+    color: #999;
+    font-style: italic;
 }
 
+/* Start 버튼 (까맣고 반듯함) */
+.start-btn {
+    color: #000;
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* 세로 짝대기 구분선 */
+.separator {
+    width: 2px;
+    height: 1.5vw;
+    background-color: #a0a0a0;
+    border-right: 1px solid #ffffff;
+    margin: 0 0.3vw;
+}
+
+/* + 버튼 */
+.square-btn {
+    padding: 0.2vw 0.6vw;
+    font-style: normal;
+}
+
+/* 버튼 눌렀을 때 효과 */
+button:active {
+    border-top: 2px solid #a0a0a0;
+    border-left: 2px solid #a0a0a0;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+}
+
+/* 오른쪽 시간 박스 */
 .time-box {
-    font-size: 0.8vw;
+    background-color: #e6e6e6;
+    border-top: 2px solid #a0a0a0;
+    border-left: 2px solid #a0a0a0;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    padding: 0.2vw 0.8vw;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: clamp(0.5rem, 0.7vw, 0.9rem);
+    color: #333;
 }
 
-/* 메인 타이틀 (기존 대비 70% 크기 & 비율 유지) */
+/* 메인 타이틀 */
 .hero-container {
     margin-top: 5vw;
     margin-left: 2vw;
+    text-align: left;
 }
 
 .hero-title {
     font-family: "Times New Roman", Times, serif;
-    font-style: italic;
     font-weight: 900;
-    line-height: 0.9;
-    letter-spacing: -2px;
-    text-transform: uppercase;
+    font-style: italic;
     color: #000000;
+    line-height: 0.9;
+    letter-spacing: -0.2vw;
+    text-transform: uppercase;
     margin: 0;
     
-    /* 기존 8vw에서 70%인 5.6vw로 줄임 */
-    /* 화면이 작아져도 최소 1.5rem, 커져도 6rem을 넘지 않음 */
-    font-size: clamp(1.5rem, 5.6vw, 6rem); 
+    /* 기존 대비 70% 크기 적용 및 유동적 스케일링 */
+    font-size: clamp(2.1rem, 7vw, 7rem); 
 }
