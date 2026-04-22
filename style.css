@@ -80,3 +80,21 @@ button:active {
     font-size: 13px;
     color: #333;
 }
+/* 메인 화면 텍스트 스타일 */
+.main-display {
+    margin-top: 50px; /* 이 숫자를 작게 하면 위로 더 올라가고, 크게 하면 내려와! */
+    text-align: center;
+    color: #000000; /* 검정색 */
+    font-family: 'Courier New', Courier, monospace; /* 타자기/픽셀 느낌 폰트 */
+}
+
+.main-display h1 {
+    font-size: 3rem; /* 제목 크기 */
+    margin-bottom: 5px;
+}
+
+.main-display p {
+    font-size: 1.2rem; /* 부제 크기 */
+    font-style: italic; /* 약간 기울여서 기괴한 느낌 추가 */
+}
+
