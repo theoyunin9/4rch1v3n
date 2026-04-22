@@ -2,43 +2,53 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #ffffff; 
+    background-color: #ffffff;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-/* 상단 회색 바 */
+/* 화면 전체를 감싸고 중앙 정렬하는 틀 */
+.wrapper {
+    width: 90vw;          /* 화면 가로폭의 90% */
+    max-width: 1200px;    /* 너무 커지지는 않게 고정 */
+    margin: 0 auto;       /* 중앙 정렬 */
+    position: relative;
+}
+
+/* 상단 회색 바 (vw 단위로 화면에 비례해서 크기 변경) */
 .top-bar {
-    background-color: #e6e6e6; /* 사진 속 옅은 회색 */
-    height: 40px;
+    background-color: #e6e6e6;
+    height: 3vw;          /* 화면 높이에 따라 조절 */
+    min-height: 35px;     /* 너무 작아지지 않게 최소 높이 설정 */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 10px;
-    border-bottom: 2px solid #a0a0a0; /* 아래쪽 그림자 라인 */
+    padding: 0 1vw;
+    border-bottom: 2px solid #a0a0a0;
 }
 
 /* 왼쪽 버튼들 정렬 */
 .left-menu {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 0.5vw;
 }
 
-/* 사진 속 레트로 버튼 공통 스타일 (튀어나온 느낌) */
+/* 사진 속 레트로 버튼 공통 스타일 */
 button {
     background-color: #e6e6e6;
     border-top: 2px solid #ffffff;
     border-left: 2px solid #ffffff;
     border-right: 2px solid #a0a0a0;
     border-bottom: 2px solid #a0a0a0;
-    font-family: 'Times New Roman', Times, serif; /* 사진 속 폰트 느낌 */
-    font-size: 15px;
-    padding: 4px 15px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: clamp(0.7rem, 1vw, 1.2rem); /* 화면에 맞춰 글자 크기 유동적 조절 */
+    padding: 0.2vw 0.8vw;
     cursor: pointer;
-    color: #999; /* 기본 탭 글씨는 회색 */
-    font-style: italic; /* 사진 보면 글씨가 살짝 기울어져 있음 */
+    color: #999;
+    font-style: italic;
 }
 
-/* Start 버튼 (얘만 까맣고 반듯함) */
+/* Start 버튼 (까맣고 반듯함) */
 .start-btn {
     color: #000;
     font-weight: bold;
@@ -48,19 +58,19 @@ button {
 /* 세로 짝대기 구분선 */
 .separator {
     width: 2px;
-    height: 25px;
+    height: 1.5vw;
     background-color: #a0a0a0;
     border-right: 1px solid #ffffff;
-    margin: 0 5px;
+    margin: 0 0.3vw;
 }
 
-/* + 버튼 (정사각형 느낌) */
+/* + 버튼 */
 .square-btn {
-    padding: 4px 10px;
+    padding: 0.2vw 0.6vw;
     font-style: normal;
 }
 
-/* 버튼 눌렀을 때 효과 (들어간 느낌) */
+/* 버튼 눌렀을 때 효과 */
 button:active {
     border-top: 2px solid #a0a0a0;
     border-left: 2px solid #a0a0a0;
@@ -68,41 +78,36 @@ button:active {
     border-bottom: 2px solid #ffffff;
 }
 
-/* 오른쪽 시간 박스 (안으로 푹 파인 느낌) */
+/* 오른쪽 시간 박스 */
 .time-box {
     background-color: #e6e6e6;
     border-top: 2px solid #a0a0a0;
     border-left: 2px solid #a0a0a0;
     border-right: 2px solid #ffffff;
     border-bottom: 2px solid #ffffff;
-    padding: 4px 10px;
+    padding: 0.2vw 0.8vw;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 13px;
+    font-size: clamp(0.6rem, 0.9vw, 1rem);
     color: #333;
 }
-/* 90-00년대 감성 굵은 명조체 스타일 */
+
+/* 메인 타이틀 (반응형 포스터처럼 작동) */
 .hero-container {
-    margin-top: 60px;   /* 메뉴바 아래로 떨어지는 거리 */
-    margin-left: 50px;  /* 왼쪽에서 띄우는 거리 (레퍼런스 참고) */
-    text-align: left;   /* 왼쪽 정렬 */
+    margin-top: 5vw;
+    margin-left: 2vw;
+    text-align: left;
 }
 
 .hero-title {
-    font-family: "Times New Roman", Times, serif; /* 00년대 감성 Serif */
-    font-size: 5rem;      /* 아주 크게 */
-    font-weight: 900;     /* 아주 굵게 */
-    font-style: italic;   /* 이텔릭체 */
-    color: #000000;       /* 검정 */
-    line-height: 1;
-    margin: 0;
-    letter-spacing: -2px; /* 글자 간격 좁혀서 빈티지한 느낌 */
+    font-family: "Times New Roman", Times, serif;
+    font-weight: 900;
+    font-style: italic;
+    color: #000000;
+    line-height: 0.9;
+    letter-spacing: -0.2vw;
     text-transform: uppercase;
-}
-
-/* style.css 파일의 이 부분을 수정하세요 */
-.wrapper {
-    width: 1200px;      /* 900px에서 1200px로 늘렸습니다 */
-    margin: 0 auto;     /* 여전히 중앙 정렬 */
-    max-width: 95%;     /* 모바일일 때는 화면의 95%까지 차게 설정 */
-    position: relative;
+    margin: 0;
+    
+    /* 화면이 줄어들면 글자도 같이 줄어듦 */
+    font-size: clamp(3rem, 10vw, 10rem); 
 }
