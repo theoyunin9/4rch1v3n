@@ -1,28 +1,82 @@
+/* 전체 배경 (완전 흰색) */
 body {
-    background-color: #008080;
-    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; 
 }
 
-.window {
-    width: 400px;
-    background: #c0c0c0;
-    border: 2px solid #fff;
-    border-bottom: 2px solid #000;
-    border-right: 2px solid #000;
-    margin: 50px auto;
-    padding: 3px;
+/* 상단 회색 바 */
+.top-bar {
+    background-color: #e6e6e6; /* 사진 속 옅은 회색 */
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    border-bottom: 2px solid #a0a0a0; /* 아래쪽 그림자 라인 */
 }
 
-.title-bar {
-    background: linear-gradient(90deg, #000080, #1084d0);
-    color: white;
-    padding: 5px;
+/* 왼쪽 버튼들 정렬 */
+.left-menu {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* 사진 속 레트로 버튼 공통 스타일 (튀어나온 느낌) */
+button {
+    background-color: #e6e6e6;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #a0a0a0;
+    border-bottom: 2px solid #a0a0a0;
+    font-family: 'Times New Roman', Times, serif; /* 사진 속 폰트 느낌 */
+    font-size: 15px;
+    padding: 4px 15px;
+    cursor: pointer;
+    color: #999; /* 기본 탭 글씨는 회색 */
+    font-style: italic; /* 사진 보면 글씨가 살짝 기울어져 있음 */
+}
+
+/* Start 버튼 (얘만 까맣고 반듯함) */
+.start-btn {
+    color: #000;
     font-weight: bold;
+    font-style: normal;
 }
 
-.content {
-    padding: 20px;
-    background: white;
-    border: 1px solid #808080;
-    margin-top: 2px;
+/* 세로 짝대기 구분선 */
+.separator {
+    width: 2px;
+    height: 25px;
+    background-color: #a0a0a0;
+    border-right: 1px solid #ffffff;
+    margin: 0 5px;
+}
+
+/* + 버튼 (정사각형 느낌) */
+.square-btn {
+    padding: 4px 10px;
+    font-style: normal;
+}
+
+/* 버튼 눌렀을 때 효과 (들어간 느낌) */
+button:active {
+    border-top: 2px solid #a0a0a0;
+    border-left: 2px solid #a0a0a0;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+}
+
+/* 오른쪽 시간 박스 (안으로 푹 파인 느낌) */
+.time-box {
+    background-color: #e6e6e6;
+    border-top: 2px solid #a0a0a0;
+    border-left: 2px solid #a0a0a0;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    padding: 4px 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 13px;
+    color: #333;
 }
